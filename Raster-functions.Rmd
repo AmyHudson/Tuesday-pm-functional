@@ -47,12 +47,16 @@ density(teakCHM,
 abline(v=rcl.m[,2],col="red", xpd=F)
 dev.off()
 
+
 # plot reclassified chm raster
 par(xpd = FALSE, mar=c(5.1, 4.1, 4.1, 4.5))
 plot(reclassified.chm,
      col=c("yellow","orange","blue","green"), 
      main="Canopy height classes at Lower Teakettle",
-     legend=F)
+     axes= F,
+     legend=F,
+     box = F)
+plot(extent(reclassified.chm), add=T, lwd=3)
 # allow legend to plot outside of bounds
 par(xpd=TRUE)
 # create the legend x position
@@ -72,7 +76,10 @@ par(xpd = FALSE, mar=c(5.1, 4.1, 4.1, 4.5))
 plot(reclassified.chm,
      col=c("yellow","orange","blue","green"), 
      main="Canopy height classes at Lower Teakettle",
-     legend=F)
+     axes= F,
+     legend=F,
+     box = F)
+plot(extent(reclassified.chm), add=T, lwd=3)
 par(xpd=TRUE)
 leg.x <- par()$usr[2] + 20
 leg.y <- par()$usr[4] + 50 - abs(par()$usr[3]-par()$usr[4])/2
